@@ -7,13 +7,19 @@ import time
 
 def main():
 	page = cw.get_ip_port()
+	ip = ""
+	port = "" 
 	
-	print page[0][0], page[1][0]
+	#print page[0][0], page[1][0]
 	for ip in page[0]:
 		for port in page[1]:
 			print ip, port
-			ctp.connect(ip, port)
-			time.sleep(6)
+			if init(ip, port) == False:
+				time.sleep(12)
+	
+def init(ip, port):
+	ctp.connect(ip, int(port))
+	return True
 
 if __name__ == "__main__":
 	main()

@@ -8,8 +8,8 @@ def get_ip_port():
 	page = requests.get('https://free-proxy-list.net/')
 	page = html.fromstring(page.content)
 
-	ips = page.xpath('//div/table/tbody/tr/td[position()=1]/text()')
-	ports = page.xpath('//div/table/tbody/tr/td[position()=2]/text()') 
+	ips = page.xpath('//table/tbody/tr/td[position()=1]/text()')
+	ports = page.xpath('//table/tbody/tr/td[position()=2]/text()') 
 	ip_list = []
 	port_list = []
 
