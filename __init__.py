@@ -1,11 +1,19 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
+from threading import Thread
 import crawler as cw
 import connect_to_proxy as ctp
 import time
 
 def main():
+	t1 = Thread(target=run)
+	t2 = Thread(target=run)
+	t1.start()
+	t2.start()
+	print "Complete"
+
+def run():
 	page = cw.get_ip_port()
 	ip = ""
 	port = "" 

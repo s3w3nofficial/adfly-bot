@@ -19,7 +19,7 @@ def connect(ip, port):
 		driver = webdriver.Firefox(firefox_profile=profile) 
      
 		try:
-			driver.get('http://babblecase.com/bXp')
+			driver.get('http://adf.ly/1aVHir')
 		except:
 			print "error"
 			return "error"
